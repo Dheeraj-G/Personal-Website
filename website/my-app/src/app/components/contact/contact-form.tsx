@@ -26,10 +26,11 @@ import { z } from "zod";
 import { send } from "./submit-form";
 
 interface ContactFormProps {
+  isSubmitted: boolean;
   setIsSubmitted: (value: boolean) => void;
 }
 
-export default function ContactForm({ setIsSubmitted }: ContactFormProps) {
+export default function ContactForm({ isSubmitted, setIsSubmitted }: ContactFormProps) {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
