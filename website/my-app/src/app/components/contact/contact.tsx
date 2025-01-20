@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
         </div>
         <div className={styles['contact-body']}>
             <div className={styles['contact-card']}>
-                <ContactForm isSubmitted={isSubmitted} setIsSubmitted={setIsSubmitted} />
+                <ContactForm setIsSubmitted={setIsSubmitted} />
             </div>
             <div className={styles['contact-info']}>
                 <div className={styles['contact-link']}>

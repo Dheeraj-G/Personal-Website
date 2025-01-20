@@ -2,7 +2,7 @@
 import React, {forwardRef} from 'react'
 import styles from './skills.module.css';
 import { gsap } from "gsap";
-import { useEffect, forwardRef, useCallback, useState } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import * as data from "./skills.json";
 const skillString = JSON.stringify(data);
 const skills = JSON.parse(skillString).skills;
