@@ -2,7 +2,7 @@
 import React, {forwardRef} from 'react'
 import styles from './skills.module.css';
 import { gsap } from "gsap";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import * as data from "./skills.json";
 const skillString = JSON.stringify(data);
 const skills = JSON.parse(skillString).skills;
@@ -34,18 +34,18 @@ interface SkillsBarProps {
 const Skills: React.FC = () => {
   const firstText = useRef<HTMLDivElement>(null);
   const secondText = useRef<HTMLDivElement>(null);
-  let xPercent = 0;
+  const [xPercent, setXPercent] = useState(0);
   const direction = -1;
 
-  const animation = () => {
+  const animation = useCallback(() => {
     if (xPercent <= -100) {
-        xPercent = 0;
+      setXPercent(0);
     }
     gsap.set(firstText.current, {xPercent: xPercent})
     gsap.set(secondText.current, {xPercent: xPercent})
-    xPercent += 0.1 * direction;
+    setXPercent(prev => prev + 0.1 * direction);
     requestAnimationFrame(animation);
-  }
+  }, [xPercent, direction]);
 
   useEffect( () => {
     requestAnimationFrame(animation);
@@ -67,5 +67,5 @@ const Skills: React.FC = () => {
   )
 
 }
-/*Skills.displayName = 'Skills';*/
+Skills.displayName = 'Skills';
 export default Skills;
