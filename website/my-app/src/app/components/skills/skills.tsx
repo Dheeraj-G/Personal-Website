@@ -2,7 +2,7 @@
 import React, {forwardRef} from 'react'
 import styles from './skills.module.css';
 import { gsap } from "gsap";
-import { useEffect, useRef, useCallback, useState } from 'react';
+import { useEffect, forwardRef, useCallback, useState } from 'react';
 import * as data from "./skills.json";
 const skillString = JSON.stringify(data);
 const skills = JSON.parse(skillString).skills;
@@ -30,6 +30,8 @@ interface SkillsBarProps {
       ))}
     </div>
   ));
+
+  SkillsBar.displayName = 'SkillsBar';
 
 const Skills: React.FC = () => {
   const firstText = useRef<HTMLDivElement>(null);
