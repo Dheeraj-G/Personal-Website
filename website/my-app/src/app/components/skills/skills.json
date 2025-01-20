@@ -1,0 +1,43 @@
+{
+    "skills":[
+        {
+            "label": "Java"
+        },
+        {
+            "label": "Python"
+        },
+        {
+            "label": "Javascript"
+        },
+        {
+            "label": "C/C++"
+        },
+        {
+            "label": "HTML/CSS"
+        },
+        {
+            "label": "NumPy"
+        },
+        {
+            "label": "Flask"
+        },
+        {
+            "label": "Git"
+        },
+        {
+            "label": "Docker"
+        },
+        {
+            "label": "Kubernetes"
+        },
+        {
+            "label": "AWS"
+        },
+        {
+            "label": "React.JS"
+        },
+        {
+            "label": "Neo4j"
+        }
+    ]
+}

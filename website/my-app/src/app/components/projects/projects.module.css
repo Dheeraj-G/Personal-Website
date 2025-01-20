@@ -1,0 +1,119 @@
+.project-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    height: 1000px;
+    margin-top: 150px;
+}
+
+.project-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10%;
+}
+
+.project-title {
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.title-description {
+    display: flex;
+    justify-content: center;
+}
+
+.title-description a{
+    font-weight: 550;
+}
+
+.title-description a:hover {
+    color: rgba(14, 14, 14, .5)
+}
+
+.project1-container {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    height: 30%;
+}
+
+.project1-container::after {
+    content: "";
+    position: absolute;
+    width: 75%;
+    margin-left: 12.5%;
+    height: 1px;
+    background-color: #cfcfcf; /* Change color as needed */
+  }
+
+.project2-container {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    height: 30%;
+}
+
+.project2-container::after {
+    content: "";
+    position: absolute;
+    width: 75%;
+    margin-left: 12.5%;
+    height: 1px;
+    background-color: #cfcfcf; /* Change color as needed */
+  }
+
+.project3-container {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    height: 30%;
+}
+
+.project3-container::after {
+    content: "";
+    position: absolute;
+    width: 75%;
+    margin-left: 12.5%;
+    height: 1px;
+    background-color: #cfcfcf; /* Change color as needed */
+  }
+
+.project-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+}
+
+.title {
+    font-size: 25px;
+}
+
+.project-description1 {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.project-description2 {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.text {
+    text-align: center;
+}
+
+.text-info {
+    font-size: 13;
+    text-align: center;
+    font-style: italic;
+}

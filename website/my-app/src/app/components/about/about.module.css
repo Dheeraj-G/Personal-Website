@@ -1,0 +1,73 @@
+.about {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    z-index: 9;
+    height: 900px;
+}
+
+.about-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-title {
+    display: flex;
+    padding-bottom: 10px;
+    align-items: center;
+    padding-left: 10.5rem;
+    font-size: 25px;
+    height: 10%;
+}
+
+.about-content {
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    padding-left: 10.5rem;
+    padding-right: 1.5rem;
+    flex-direction: column;
+
+}
+
+.image-container {
+    padding-top: 7.5rem;
+    width: 50%;
+    padding-left: 8.5rem;
+}
+
+.resume-button {
+    border-radius: 900px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    gap: 0.5rem;
+    font-size: 0.875rem; /* equivalent to text-sm */
+    height: 2.5rem; /* equivalent to h-10 */
+    padding: 0 1rem;
+    margin-left: 175px;
+    margin-right: 175px;
+    margin-top: 80px;
+}
+
+@media (min-width: 640px) {
+    .resume-button {
+      font-size: 1rem; /* equivalent to text-base */
+      height: 3rem; /* equivalent to h-12 */
+      padding: 0 1.25rem; /* equivalent to px-5 */
+    }
+  }
+  
+  .resume-button:hover {
+    background-color: #383838;
+  }
+  
+  .dark-mode .resume-button:hover {
+    background-color: #ccc;
+  }
