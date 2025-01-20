@@ -5,7 +5,6 @@ import { formSchema } from "./schemas";
 import {
   Card,
   CardHeader,
-  CardTitle,
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
@@ -25,14 +24,12 @@ import {
 
 import { z } from "zod";
 import { send } from "./submit-form";
-import { useState } from "react";
 
 interface ContactFormProps {
-  isSubmitted: boolean;
   setIsSubmitted: (value: boolean) => void;
 }
 
-export default function ContactForm({ isSubmitted, setIsSubmitted }: ContactFormProps) {
+export default function ContactForm({ setIsSubmitted }: ContactFormProps) {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

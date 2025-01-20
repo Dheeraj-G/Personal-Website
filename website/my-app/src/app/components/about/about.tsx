@@ -8,7 +8,7 @@ const About: React.FC = () => {
       <div id="about" className={styles.about}> 
         <div className={styles['about-container']}>
             <div className={styles['about-title']}>
-                <h1>Hi, I'm Dheeraj</h1>
+                <h1>Hi, I&apos;m Dheeraj</h1>
             </div>
             <div className={styles['about-content']}>
                 <p> Through my various experiences including sketching, reading, rock climbing, and software development, 

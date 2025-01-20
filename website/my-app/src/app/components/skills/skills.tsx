@@ -35,11 +35,7 @@ const Skills: React.FC = () => {
   const firstText = useRef<HTMLDivElement>(null);
   const secondText = useRef<HTMLDivElement>(null);
   let xPercent = 0;
-  let direction = -1;
-
-  useEffect( () => {
-    requestAnimationFrame(animation);
-  }, [])
+  const direction = -1;
 
   const animation = () => {
     if (xPercent <= -100) {
@@ -50,6 +46,11 @@ const Skills: React.FC = () => {
     xPercent += 0.1 * direction;
     requestAnimationFrame(animation);
   }
+
+  useEffect( () => {
+    requestAnimationFrame(animation);
+  }, [animation])
+
 
   return (
     <div id="skills" className={styles['skills-container']}>
@@ -66,5 +67,5 @@ const Skills: React.FC = () => {
   )
 
 }
-
-export default Skills
+/*Skills.displayName = 'Skills';*/
+export default Skills;
