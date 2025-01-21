@@ -1,2 +1,2 @@
 # Personal-Website
-This is a minimalistic personal website
+Minimalistic Personal Website
