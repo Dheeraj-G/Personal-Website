@@ -15,7 +15,7 @@ function getResend() {
   return new Resend(apiKey);
 }
 
-export async function registerRoutes(app: Express): Promise<Server> {
+export async function registerRoutes(app: Express): Promise<Server | null> {
   // put application routes here
   // prefix all routes with /api
 
@@ -40,26 +40,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(500).json({ success: false, error: "Email service not configured" });
       }
       
-      // Try to create React element, fallback to HTML if it fails
-      let emailContent;
-      try {
-        emailContent = React.createElement(EmailTemplate, {
-          email: formData.email,
-          message: formData.message,
-        });
-      } catch (reactError) {
-        console.error("React element creation failed, using HTML fallback:", reactError);
-        // Fallback to HTML if React fails
-        emailContent = `<div><p>Hello,<br>you have a new message from ${formData.email},<br>${formData.message}</p></div>`;
-      }
+      // Create HTML email content directly (more reliable in serverless environments)
+      const htmlContent = `
+        <div style="font-family: Arial, sans-serif; padding: 20px;">
+          <h2 style="color: #333;">New Contact Form Submission</h2>
+          <p><strong>From:</strong> ${formData.firstName} ${formData.lastName}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <hr style="border: 1px solid #eee; margin: 20px 0;">
+          <p><strong>Message:</strong></p>
+          <p style="white-space: pre-wrap; background: #f5f5f5; padding: 15px; border-radius: 5px;">${formData.message}</p>
+        </div>
+      `;
       
       console.log("Sending email via Resend...");
       const { error, data } = await resend.emails.send({
         from: `${formData.firstName} ${formData.lastName} <${process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
         to: "gosuladheeraj@gmail.com",
         subject: "Email Form Submission",
-        react: typeof emailContent === 'string' ? undefined : emailContent,
-        html: typeof emailContent === 'string' ? emailContent : undefined,
+        html: htmlContent,
       });
 
       if (error) {
@@ -79,7 +77,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  const httpServer = createServer(app);
+  // Only create HTTP server if not in Vercel serverless environment
+  if (process.env.VERCEL) {
+    return null;
+  }
 
+  const httpServer = createServer(app);
   return httpServer;
 }
