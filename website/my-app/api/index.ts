@@ -32,7 +32,18 @@ export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
-  const expressApp = await getApp();
-  return expressApp(req, res);
+  try {
+    const expressApp = await getApp();
+    expressApp(req, res);
+  } catch (error) {
+    console.error('Serverless function error:', error);
+    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+    if (!res.headersSent) {
+      return res.status(500).json({ 
+        success: false, 
+        error: error instanceof Error ? error.message : 'Internal server error' 
+      });
+    }
+  }
 }
 

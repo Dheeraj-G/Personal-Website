@@ -194,11 +194,11 @@ export default function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>Your Email</FormLabel>
                       <FormControl>
                         <Input
                           type="email"
-                          placeholder="Email"
+                          placeholder="Your Email"
                           className="bg-background border-border/50"
                           data-testid="input-email"
                           {...field}

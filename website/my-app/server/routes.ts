@@ -25,7 +25,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission route
   app.post("/api/contact", async (req, res) => {
     try {
+      console.log("Contact form submission received");
       const formData = contactFormSchema.parse(req.body);
+      console.log("Form data validated:", { email: formData.email, firstName: formData.firstName });
       
       const resend = getResend();
       if (!resend) {
@@ -38,14 +40,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(500).json({ success: false, error: "Email service not configured" });
       }
       
-      const { error } = await resend.emails.send({
+      // Try to create React element, fallback to HTML if it fails
+      let emailContent;
+      try {
+        emailContent = React.createElement(EmailTemplate, {
+          email: formData.email,
+          message: formData.message,
+        });
+      } catch (reactError) {
+        console.error("React element creation failed, using HTML fallback:", reactError);
+        // Fallback to HTML if React fails
+        emailContent = `<div><p>Hello,<br>you have a new message from ${formData.email},<br>${formData.message}</p></div>`;
+      }
+      
+      console.log("Sending email via Resend...");
+      const { error, data } = await resend.emails.send({
         from: `${formData.firstName} ${formData.lastName} <${process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
         to: "gosuladheeraj@gmail.com",
         subject: "Email Form Submission",
-        react: React.createElement(EmailTemplate, {
-          email: formData.email,
-          message: formData.message,
-        }),
+        react: typeof emailContent === 'string' ? undefined : emailContent,
+        html: typeof emailContent === 'string' ? emailContent : undefined,
       });
 
       if (error) {
@@ -53,9 +67,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(500).json({ success: false, error: "Failed to send email" });
       }
 
+      console.log("Email sent successfully:", data);
       return res.json({ success: true });
     } catch (error) {
       console.error("Contact form error:", error);
+      console.error("Error stack:", error instanceof Error ? error.stack : 'No stack trace');
       if (error instanceof Error) {
         return res.status(400).json({ success: false, error: error.message });
       }
