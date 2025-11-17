@@ -1,0 +1,62 @@
+Build a **portfolio website** for me (name: Dheeraj Gosula) with a modern, minimalistic design inspired by Squarespace, Vercel, Linear, and Cursor. The color palette should be **dark green**, **black**, **white**, and their shades. Use glassmorphism (frosted glass panels, translucent backgrounds) and smooth transitions/animations throughout.
+
+Here are the required pages / sections:
+
+1. **Home / Landing Page**  
+   - Hero section with my name (“Dheeraj Gosula”) and a short tagline (you can generate something like “Software Engineer & Designer” or similar).  
+   - Subtle animated background or motion effect (e.g., gentle fade-in, parallax, or soft cursor-based movement).  
+   - Navigation bar (sticky) with links: About, Projects, Experience, Contact, GitHub (or Links).
+
+2. **About / Personal Info**  
+   - A section with a short bio / personal statement.  
+   - Education background (school, major, etc.).  
+   - Key skills (programming languages, tools).  
+   - Possibly a photo (or placeholder) in a glass panel.
+
+3. **Projects**  
+   - A grid or list of my major projects. For each: project name, short description, tech stack, and a link (e.g., GitHub or live site).  
+   - When hovering over a project card, it should slightly blur / lift / glow (glass effect) with a smooth transition.
+
+4. **Experience**  
+   - Previous roles / internships / jobs.  
+   - For each: company name, role, dates, and a brief description of responsibilities or achievements.  
+   - Use a timeline or clean list layout, styled minimally.
+
+5. **Contact**  
+   - A contact form (name, email, message) or just links / icons for email, LinkedIn, GitHub.  
+   - On hover, icons should have subtle glass / neon glow or blur background.
+
+6. **Footer / Links**  
+   - Links to my GitHub, LinkedIn, maybe resume.  
+   - A minimal copyright line.
+
+**Design & UI details:**
+
+- Use **semantic HTML5** structure (header, footer, sections, nav).  
+- Use **CSS** (or Tailwind CSS — whichever is easier) to style: glassmorphism panels, CSS variables for color palette, dark-mode style.  
+- Include **responsive design** so it works well on mobile and desktop.  
+- Use **smooth animations/transitions**: fade-ins, hover effects, scrolling transitions.  
+- Use a clean, modern font (something like Inter, SF Pro, or equivalent).  
+- Incorporate **hidden / Easter-egg UI features** (for example, hidden menu, secret hover interactions, or a small interactive cursor effect).  
+- Ensure accessibility: alt attributes for images, good contrast.
+
+**Content:**
+
+- Pull content from my existing website (www.dheerajgosula.com):  
+  - Use my existing bio / about text.  
+  - Include the same projects and experience I have listed there.  
+  - Use my GitHub link(s).  
+  - Use contact details / email / social links.
+
+**Technical:**
+
+- Use **pure frontend** (HTML, CSS, JS)
+- Make it ready to deploy (on Replit or any static host).  
+- Code should be clean, modular, and well-commented.  
+- Generate a small **dark-mode toggle** (or default dark green / dark background).  
+- Use glass-blur panels that adapt based on scroll position (e.g., navbar becomes frosted glass when scrolling).  
+- Add scroll-triggered animations (e.g., sections fade in, slide in).
+
+---
+
+**Please organize your approach in steps** (plan first, then generate code). Show me a project plan (file structure, components, sitemaps) before writing all the code, so I can approve and then you build it.  
