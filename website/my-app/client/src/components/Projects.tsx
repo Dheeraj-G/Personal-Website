@@ -14,7 +14,7 @@ const projects = [
     description: 'Developed a web app to help students save time discovering knowledge gaps by generating personalized learning roadmaps and contextual quizzes from uploaded PDFs, images, and audio files using OCR, LLMs, and knowledge-tree logic. Integrated Next.js frontend with Flask backend, cloud data storage (GCS, Firebase), multi-agent orchestration (LangChain, LangGraph), and Web Sockets to deliver interactive study experiences and adaptive visualizations using D3.js.',
     tech: ['Next.js', 'Flask', 'Python', 'Google Cloud Services', 'Firebase', 'LangChain', 'LangGraph', 'D3.js', 'OCR', 'LLMs', 'Web Sockets'],
     category: 'OAuth + Multimodal Input + Full Stack Application + Google Cloud Services',
-    github: 'https://github.com/Dheeraj-G',
+    github: 'https://github.com/Dheeraj-G/StudyPath',
     image: studyPathImage,
     icon: Brain,
   },
@@ -23,7 +23,7 @@ const projects = [
     description: 'Built a React JS frontend and Python/Flask backend to display real-time library seat availability at Ohio State, saving students 20+ minutes searching for open tables. Leveraged multithreading on four YOLOv11 machine learning computer vision instances to process live camera feeds and provide accurate, aggregated seat occupancy data.',
     tech: ['Computer Vision', 'YOLOv11', 'React.js', 'Flask', 'Python', 'Multithreading'],
     category: 'Computer Vision Model + Full Stack Application',
-    github: 'https://github.com/Dheeraj-G',
+    github: 'https://github.com/Dheeraj-G/BuckEye',
     image: buckEyeImage,
     icon: Code,
   },
@@ -32,7 +32,7 @@ const projects = [
     description: 'Developed a web app with 20+ users using Next.js, Python, and OAuth integration with Spotify API, leveraging Ollama to deliver personalized, vibe-matched song recommendations, improving user music discovery efficiency. Implemented preference learning to adapt to user taste over time, increasing recommendation relevance and enhancing engagement.',
     tech: ['Next.js', 'Python', 'OAuth', 'Spotify API', 'Ollama', 'Machine Learning'],
     category: 'OAuth + API Integration + Full Stack Application',
-    github: 'https://github.com/Dheeraj-G',
+    github: 'https://github.com/Dheeraj-G/VibeCheck',
     image: vibeCheckImage,
     icon: Music,
   },
@@ -41,7 +41,7 @@ const projects = [
     description: 'Created a macOS utility in Swift to temporarily disable keyboard inputs, enabling safe screen and keyboard cleaning. Implemented triple Option key detection via Cocoa APIs and designed a minimal UI with planned auto screen-dimming for improved user experience.',
     tech: ['Swift', 'macOS', 'Cocoa APIs', 'UI/UX'],
     category: 'macOS Application',
-    github: 'https://github.com/Dheeraj-G',
+    github: 'https://github.com/Dheeraj-G/Cleaning-Mode',
     image: kCleanerImage,
     icon: Keyboard,
   },
@@ -50,7 +50,7 @@ const projects = [
     description: 'Developed a full-stack web application that encourages users to explore diverse perspectives and approach issues from new viewpoints. Utilized the OpenAI API to output three varying perspectives with a React JS frontend tied to a Python script using Flask.',
     tech: ['OpenAI API', 'React.js', 'Flask', 'Python'],
     category: 'API Integration + Full Stack Application',
-    github: 'https://github.com/Dheeraj-G',
+    github: 'https://github.com/Dheeraj-G/Perspective-Generator',
     image: perspectiveImage,
     icon: Lightbulb,
   },
@@ -59,7 +59,7 @@ const projects = [
     description: 'Utilized algorithms such as logistic regression and decision trees to evaluate the Iris Flowers Dataset. Implemented using Python and popular machine learning libraries such as Scikit-Learn and Pandas for data preprocessing, model training, and evaluation.',
     tech: ['Machine Learning', 'Python', 'Scikit-Learn', 'Pandas'],
     category: 'Machine Learning Dataset Classification',
-    github: 'https://github.com/Dheeraj-G',
+    github: null,
     image: irisImage,
     icon: Flower,
   },
@@ -222,16 +222,18 @@ export default function Projects() {
                               <h3 className="text-2xl font-bold" data-testid={`text-project-title-${expandedIndex}`}>
                       {project.title}
                     </h3>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 hover-elevate rounded-md transition-all"
-                                data-testid={`link-project-github-${expandedIndex}`}
-                      aria-label="View on GitHub"
-                    >
-                      <Github className="w-5 h-5" />
-                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 hover-elevate rounded-md transition-all"
+                        data-testid={`link-project-github-${expandedIndex}`}
+                        aria-label="View on GitHub"
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
+                    )}
                   </div>
                   
                             <p className="text-sm text-primary mb-4" data-testid={`text-project-category-${expandedIndex}`}>
