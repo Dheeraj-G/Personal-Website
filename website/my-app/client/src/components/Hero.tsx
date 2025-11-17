@@ -43,7 +43,7 @@ export default function Hero() {
 
         <div className="mt-16 flex items-center justify-center gap-8 text-sm text-muted-foreground">
           <a
-            href="https://drive.google.com/file/d/12ujWp8ebhN3DVrD8Sy0SiJIYizCns9ZX/view?usp=sharing"
+            href="https://drive.google.com/file/d/1Ij5VSBNunGv-yruJgKNs80ltgoJNmeEX/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors hover-elevate px-3 py-2 rounded-md"

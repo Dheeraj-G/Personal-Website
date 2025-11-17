@@ -4,12 +4,12 @@ import { Briefcase, GraduationCap, Building2, FlaskConical } from 'lucide-react'
 const experiences = [
   {
     type: 'work',
-    icon: Building2,
-    title: 'Nationwide Insurance',
-    role: 'Software Engineering Intern',
+    icon: FlaskConical,
+    title: 'The Ohio State University & Imageomics Institute',
+    role: 'Research Assistant',
     location: 'Columbus, OH',
-    period: 'May 2025 – September 2025',
-    description: 'Increased efficiency by 30% by creating an internal automation tool with Angular, Python, and Flask. Designed ETL pipelines using Spring Boot and accelerated deployment speed by 50% with CI/CD pipelines using GitHub Actions, Docker, and Kubernetes.',
+    period: 'August 2024 – December 2024',
+    description: 'Trained ResNet50 models using PyTorch to identify differences in butterfly comimics through visual acuity perspectives. Utilized Grad-CAM for model visualization to identify key coevolution variations. Collaborated with the Translational Data Analytics Institute and Imageomics Institute.',
   },
   {
     type: 'work',
@@ -22,12 +22,12 @@ const experiences = [
   },
   {
     type: 'work',
-    icon: FlaskConical,
-    title: 'The Ohio State University & Imageomics Institute',
-    role: 'Research Assistant',
+    icon: Building2,
+    title: 'Nationwide Insurance',
+    role: 'Software Engineering Intern',
     location: 'Columbus, OH',
-    period: 'August 2024 – December 2024',
-    description: 'Trained ResNet50 models using PyTorch to identify differences in butterfly comimics through visual acuity perspectives. Utilized Grad-CAM for model visualization to identify key coevolution variations. Collaborated with the Translational Data Analytics Institute and Imageomics Institute.',
+    period: 'May 2025 – September 2025',
+    description: 'Increased efficiency by 30% by creating an internal automation tool with Angular, Python, and Flask. Designed ETL pipelines using Spring Boot and accelerated deployment speed by 50% with CI/CD pipelines using GitHub Actions, Docker, and Kubernetes.',
   },
   {
     type: 'education',
@@ -35,7 +35,7 @@ const experiences = [
     title: 'The Ohio State University',
     role: 'Bachelor of Science in Computer Science',
     location: 'Columbus, OH',
-    period: '2021 - 2025',
+    period: 'August 2023 - December 2026',
     description: 'Focused on software engineering, machine learning, and computer vision. Participated in various hackathons and coding competitions.',
   },
 ];

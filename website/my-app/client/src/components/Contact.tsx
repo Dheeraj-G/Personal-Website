@@ -60,7 +60,21 @@ export default function Contact() {
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
+      // Check if response is JSON before parsing
+      const contentType = response.headers.get('content-type');
+      let result;
+      
+      if (contentType && contentType.includes('application/json')) {
+        result = await response.json();
+      } else {
+        // If not JSON, read as text
+        const text = await response.text();
+        throw new Error(text || `Server error: ${response.status} ${response.statusText}`);
+      }
+
+      if (!response.ok) {
+        throw new Error(result.error || `Server error: ${response.status} ${response.statusText}`);
+      }
 
       if (result.success) {
         toast({

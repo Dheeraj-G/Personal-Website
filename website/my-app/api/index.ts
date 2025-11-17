@@ -21,7 +21,8 @@ async function getApp(): Promise<Express> {
   app.use((err: any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
-    res.status(status).json({ message });
+    // Ensure Content-Type is set to JSON and match the format used by contact route
+    res.status(status).json({ success: false, error: message });
   });
 
   return app;
