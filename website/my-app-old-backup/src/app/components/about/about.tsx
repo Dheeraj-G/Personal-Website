@@ -18,7 +18,7 @@ const About: React.FC = () => {
                 </p>
                 <a
                     className={styles['resume-button']}
-                    href="https://drive.google.com/file/d/1bJ6ziRbnGE850E-7KLXD1DsEUplBECRf/view?usp=sharing"
+                    href="https://drive.google.com/file/d/12o64KxAoULOaMXOY-6bmqCq3NjRfLd6q/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
