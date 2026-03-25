@@ -43,7 +43,7 @@ export default function Footer() {
               <Mail className="w-5 h-5" />
             </a>
             <a
-              href="https://drive.google.com/file/d/1bJ6ziRbnGE850E-7KLXD1DsEUplBECRf/view?usp=sharing"
+              href="https://drive.google.com/file/d/12o64KxAoULOaMXOY-6bmqCq3NjRfLd6q/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 text-sm bg-accent/30 backdrop-blur-sm border border-accent-foreground/10 rounded-md hover-elevate active-elevate-2 transition-all"
